@@ -53,3 +53,16 @@ sriram@ubuntu:~/Downloads$ minikube start
 sriram@ubuntu:~/Downloads$
 ```
 
+### pods status running in the cluster 
+
+```sh
+sriram@ubuntu:~/Downloads$ minikube kubectl -- get po -A
+NAMESPACE     NAME                               READY   STATUS    RESTARTS      AGE
+kube-system   coredns-78fcd69978-sswhq           1/1     Running   0             14m
+kube-system   etcd-minikube                      1/1     Running   0             14m
+kube-system   kube-apiserver-minikube            1/1     Running   0             14m
+kube-system   kube-controller-manager-minikube   1/1     Running   0             14m
+kube-system   kube-proxy-wsszj                   1/1     Running   0             14m
+kube-system   kube-scheduler-minikube            1/1     Running   0             14m
+kube-system   storage-provisioner                1/1     Running   1 (13m ago)   14m
+```
