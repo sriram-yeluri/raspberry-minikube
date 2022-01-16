@@ -66,3 +66,9 @@ kube-system   kube-proxy-wsszj                   1/1     Running   0            
 kube-system   kube-scheduler-minikube            1/1     Running   0             14m
 kube-system   storage-provisioner                1/1     Running   1 (13m ago)   14m
 ```
+
+### Download kubectl for arm64
+
+```sh
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
+```
