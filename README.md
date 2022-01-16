@@ -71,4 +71,26 @@ kube-system   storage-provisioner                1/1     Running   1 (13m ago)  
 
 ```sh
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
+chmod +x kubectl
+sudo cp kubectl /usr/bin/
+```
+
+### kubectl status
+
+```sh
+sriram@ubuntu:~$ kubectl get pods -A
+NAMESPACE              NAME                                         READY   STATUS    RESTARTS      AGE
+kube-system            coredns-78fcd69978-sswhq                     1/1     Running   0             32m
+kube-system            etcd-minikube                                1/1     Running   0             32m
+kube-system            kube-apiserver-minikube                      1/1     Running   0             32m
+kube-system            kube-controller-manager-minikube             1/1     Running   0             32m
+kube-system            kube-proxy-wsszj                             1/1     Running   0             32m
+kube-system            kube-scheduler-minikube                      1/1     Running   0             32m
+kube-system            storage-provisioner                          1/1     Running   1 (31m ago)   32m
+kubernetes-dashboard   dashboard-metrics-scraper-5594458c94-npz5p   1/1     Running   0             16m
+kubernetes-dashboard   kubernetes-dashboard-654cf69797-gkd7t        1/1     Running   0             16m
+
+sriram@ubuntu:~$ kubectl get nodes
+NAME       STATUS   ROLES                  AGE   VERSION
+minikube   Ready    control-plane,master   32m   v1.22.3
 ```
